@@ -1,5 +1,9 @@
+using MvcNetCoreUtilidades.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<HelperPathProvider>();
+builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllersWithViews();
 
@@ -14,10 +18,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapStaticAssets();
 
 app.MapControllerRoute(
