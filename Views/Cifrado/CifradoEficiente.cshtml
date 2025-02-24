@@ -1,0 +1,11 @@
+﻿
+<h1>Cifrado eficiente</h1>
+<form method="post">
+    <input type="text" name="contenido" class="form-control" placeholder="contenido" />
+    <textarea type="text" name="resultado" class="form-control" rows="5">@ViewBag.TextoCifrado</textarea>
+    <button class="btn" name="accion" value="cifrar">Cifrar</button>
+    <button class="btn" name="accion" value="comparar">Comparar</button>
+</form>
+
+<p>@ViewBag.Mensaje</p>
+<p>@ViewBag.Salt</p>
