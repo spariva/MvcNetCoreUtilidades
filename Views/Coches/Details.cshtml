@@ -1,0 +1,8 @@
+﻿@model Coche
+
+@if (Model == null){
+    <h2>No existe</h2>
+}else{
+    <h2>@Model.Marca y @Model.Modelo</h2>
+    <img src="@Model.Imagen" width="300px" />
+}

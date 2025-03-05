@@ -1,0 +1,29 @@
+﻿@section Scripts {
+    <script>
+        $(document).ready(function(){
+            $("#btnloadcoches").click(function(){
+                $("#containercoches").load("/Coches/_CochesPartial");
+            })
+
+            $("#btnbuscarcoche").click(function(){
+                //si el param se llama id (porque en program es el que puse por defecto): controller/action/id 
+                //si se llama diferente: controller/action?param1=valor&param2=valor2
+                var id = $("#cajaidcoche").val();
+                var request = "/Coches/_CochesPost?idcoche=" + id;
+                $("#detallescoche").load(request);
+            })
+            
+        })
+     </script>
+}
+
+<h1>Index ajax coches</h1>
+
+<label>Id coche a buscar</label>
+<input type="text" id="cajaidcoche" class="form-control"/>
+<button id="btnbuscarcoche">busca coche</button>
+
+<button id="btnloadcoches">Load Coches Ajax</button>
+<div id="containercoches" class="bg-info-subtle"></div>
+
+<div id="detallescoche" class="bg-success-subtle"></div>
